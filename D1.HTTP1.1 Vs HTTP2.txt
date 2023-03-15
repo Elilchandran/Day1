@@ -1,0 +1,55 @@
+HTTP1.1 vs HTTP2:
+   1.	Introduction.
+   2.How HTTP 1.1 & HTTP 2 Works.
+   3.Difference between HTTP 1.1& HTTP2.
+	
+1.Introduction:
+            HTTP (Hyper Text Transfer Protocol) is the foundation of WWW (World Wide Web). HTTP is the protocol that enables communication between web client (browser) and servers (where web pages are hosted). The latest version of HTTP is HTTP 1.1 and HTTP 2.
+	HTTP 1.1: (Used more than 20yrs)
+	HTTP 2: (New protocol introduced in 2015)
+
+2. How HTTP 1.1 & HTTP 2 Works:
+   While using HTTP 1.1 to load a web page:
+    Request 1: Client requests HTML file
+    Response 1: Server sends HTML file
+    Request 2: Client requests CSS stylesheet
+    Response 2: Server sends CSS stylesheet
+    Request 3: Client requests image file 1
+    Response 3: Server sends image file 1
+    Request 4: Client requests JavaScript file
+    Response 4: Server sends JavaScript file
+    Request 5: Client requests image file 2
+    Response 5: Server sends image file 2
+   With HTTP 1.1, the client has to wait for each resource to be loaded before it can load the next one. This can result in slower load   times for web pages.
+
+   While using HTTP 2 to load a web page:
+   The client and server can use a single connection to send multiple requests and responses at the same time. This is called multiplexing. Here's how the process would look with HTTP2
+   Request 1: Client requests HTML file
+   Request 2: Client requests CSS stylesheet, image file 1, JavaScript file, and image file 2
+   Response 1: Server sends HTML file
+   Response 2: Server sends CSS stylesheet, image file 1, JavaScript file, and image file 2
+    the client can send multiple requests at the same time, and the server can respond with multiple resources at the same time. This can result in faster load times for web pages.
+
+3.Difference between HTTP 1.1& HTTP2:
+  3.1. Multiplexing:
+           One of the most significant differences between HTTP 1.1 and HTTP 2 is the way in which they handle requests and responses. HTTP 1.1 uses a single connection to transfer data,  which means that each request and response must wait for the previous one to complete before it can be sent. This can lead to a phenomenon known as "head-of-line blocking(HOL)," where slower requests delay faster ones.
+
+          HTTP 2, on the other hand, uses a new feature called multiplexing. With multiplexing, multiple requests can be sent and received at the same time over a single connection. This significantly reduces the delay of the web page loading and helps the client receive the response faster.
+
+  3.2.Server push:
+          HTTP 2 introduces a new feature called server push. With server push, the server can proactively send resources to the client before the client even requests them. This can significantly improve the performance of web pages and reduce the number of round trips required to load a page.This option is not available in HTTP 1.1.
+
+  3.3.Binary framing layer:
+         Another significant difference between HTTP 1.1 and HTTP 2 is the framing layer. HTTP 1.1 uses a text-based protocol, which means that data is sent in plain text. This can make it easier for attackers to intercept and manipulate the data.
+
+         HTTP 2, on the other hand, uses a binary framing layer. This means that data is sent in a binary format, which makes it more difficult for attackers to intercept and manipulate the data.
+
+  3.4.Header compression:
+         HTTP 2  introduces a new feature called header compression. With header compression, the size of the headers is reduced, which can significantly reduce the amount of data that needs to be sent between the client and server. This can help to improve the performance of web pages and reduce the amount of internet speed required. 
+         HTTP 1.1 supports header compression, but it is not mandatory and is not used by default.
+
+  3.5.Backward compatibility:
+         While HTTP 2 offers a range of new features and improvements over HTTP 1.1, it is important to note that it is backward compatible with HTTP 1.1. This means that servers can still serve content over HTTP 1.1 if necessary, and clients that do not support HTTP 2 can still access websites that use the new protocol.
+
+In conclusion, while HTTP 1.1 has been a reliable protocol for over two decades, HTTP 2 introduces significant improvements in performance, security, and functionality. With multiplexing, server push, binary framing layer, header compression, and backward compatibility, HTTP 2 offers a better experience for web clients and servers. As the web continues to evolve, it is likely that HTTP 2 will become the new standard for web protocols.
+   
